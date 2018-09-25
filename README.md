@@ -1,7 +1,9 @@
 # click-popup
 
 [![Build status](https://img.shields.io/travis/imcuttle/click-popup/master.svg?style=flat-square)](https://travis-ci.org/imcuttle/click-popup)
-[![Test coverage](https://img.shields.io/codecov/c/github/imcuttle/click-popup.svg?style=flat-square)](https://codecov.io/github/imcuttle/click-popup?branch=master)
+
+<!--[![Test coverage](https://img.shields.io/codecov/c/github/imcuttle/click-popup.svg?style=flat-square)](https://codecov.io/github/imcuttle/click-popup?branch=master)-->
+
 [![NPM version](https://img.shields.io/npm/v/click-popup.svg?style=flat-square)](https://www.npmjs.com/package/click-popup)
 [![NPM Downloads](https://img.shields.io/npm/dm/click-popup.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/click-popup)
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://prettier.io/)

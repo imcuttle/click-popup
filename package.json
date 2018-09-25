@@ -1,6 +1,6 @@
 {
   "name": "click-popup",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.es5.js",
   "files": [
     "index.js"

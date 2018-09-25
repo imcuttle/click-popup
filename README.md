@@ -11,6 +11,10 @@
 
 The interaction about funny popup animation
 
+![](./screenshot.gif)
+
+- [Live Demo](https://imcuttle.github.io/click-popup)
+
 ## Installation
 
 ```bash
@@ -40,7 +44,17 @@ const dispose = clickPopup(
 
 ## API
 
+### `clickPopup(nodeList: Array<Node|string>, Node, options?)`
+
+#### options
+
+- `index`: start index (Type: `number`, Default: `0`)
+- `styleMapper`: style mapper (Type: `(style, currentNode) => style`, Default: `sty => sty`)
+- The rest of options see [popmotion - tween](https://popmotion.io/api/tween/#tween-props)
+
 ## Related
+
+- [popmotion](https://github.com/Popmotion/popmotion) - Simple animation libraries for delightful user interfaces
 
 ## Authors
 

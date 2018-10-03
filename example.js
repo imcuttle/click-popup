@@ -5,7 +5,7 @@
  *
  */
 
-import popup from './'
+import popup from './index'
 
 const span = document.createElement('span')
 span.textContent = '民主'

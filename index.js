@@ -18,10 +18,17 @@ function popup(popupList = [], node, { styleMapper = sty => sty, index = 0, from
     throw new Error('[click-popup] `popupList` should be an array which is not empty')
   }
 
+  const isSupportTouchStart = 'ontouchstart' in document.documentElement
+
   const clickHandler = evt => {
-    // const bodyRect = document.body.getBoundingClientRect()
-    let left = evt.pageX //- bodyRect.left
-    let top = evt.pageY - 3 //- bodyRect.top
+    let { pageX, pageY } = evt
+    if (evt.type === 'touchstart' && evt.touches && evt.touches[0]) {
+      pageX = evt.touches[0].pageX
+      pageY = evt.touches[0].pageY
+    }
+
+    let left = pageX //- bodyRect.left
+    let top = pageY - 3 //- bodyRect.top
 
     const span = document.createElement('span')
     const node = popupList[index++ % popupList.length]
@@ -54,11 +61,20 @@ function popup(popupList = [], node, { styleMapper = sty => sty, index = 0, from
       }
     })
   }
-  node.addEventListener('click', clickHandler, false)
 
-  return () => {
-    node.removeEventListener('click', clickHandler, false)
+  const eventName = isSupportTouchStart ? 'touchstart' : 'click'
+  node.addEventListener(eventName, clickHandler, false)
+  // node.addEventListener('touchstart', clickHandler, false)
+
+  const close = () => {
+    node.removeEventListener(eventName, clickHandler, false)
   }
+
+  if (module.hot && process.env.NODE_ENV !== 'production') {
+    module.hot.accept(['./'], close)
+  }
+
+  return close
 }
 
 export default popup

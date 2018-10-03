@@ -12,6 +12,7 @@
     "precommit": "pretty-quick --staged",
     "build": "babel index.js -o index.es5.js",
     "build:demo": "gojs -b example.js",
+    "demo": "gojs -i example.js -p 10000",
     "dev": "npm run build -- -w",
     "version": "npm run changelog",
     "commitmsg": "commitlint -e $GIT_PARAMS",
